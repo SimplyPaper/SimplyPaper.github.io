@@ -25,7 +25,7 @@ h5,
 h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Indie Flower",Helvetica,Arial,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -173,7 +173,16 @@ a:focus {
         font-size: 25px;
     }
 }
-
+.btn-lg {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000;
+}
+.btn-lg:hover {
+    background-color: #000000;
+    border-color: #000000;
+    color: #ffffff;
+}
 .btn-circle {
     width: 70px;
     height: 70px;
