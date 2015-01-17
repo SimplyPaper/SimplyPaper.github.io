@@ -1,7 +1,6 @@
 <?php
-header('Location: http://localhost:8888/home.html');
+header('Location: http://localhost:8888/output.html');
 $file = 'log.txt';
-file_put_contents($file, "hello");
 $current = file_get_contents($file);
 $target_dir = "uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -52,4 +51,6 @@ if ($uploadOk == 0) {
         file_put_contents($file, $contents);
     }
 }
+
+exec("python test_script.py");
 ?>
