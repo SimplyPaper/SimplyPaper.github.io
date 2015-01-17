@@ -27,16 +27,17 @@ class wolfram(object):
                         data_dics[e.get('title')] = it.text
         return data_dics
  
-    def search(self, ip):
+    def search(self, ip, value):
         xml = self._get_xml(ip)
         result_dics = self._xmlparser(xml)
         #return result_dics 
         #print result_dics
-        print result_dics['Property']
+        return result_dics[value]
  
 if __name__ == "__main__":
     appid = "PG9HJR-22LGXXP97Y"
     query = "pi"
+    value = "Decimal approximation"
     w = wolfram(appid)
-    w.search(query)
+    print w.search(query, value)
       
