@@ -20,14 +20,17 @@ appid = "PG9HJR-22LGXXP97Y"
 query = "pi"
 value = "Decimal approximation"
 w = wolfram(appid)
-print w.search(query, value)
+result = w.search(query, value)
 
+# Write query results to html file
+html_file.write("Query: " + query + "\n")
+html_file.write(value + " " + result + "\n")
 
 # Finish-up html file
 html_file.write("</p>\n")
 html_file.write("</div>\n")
 html_file.write("</body>\n")
-html_file.write("
+html_file.write("</html>\n")
 
 css_file.close()
 html_file.close()
