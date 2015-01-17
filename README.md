@@ -11,5 +11,5 @@ TBA
 
 -------------------------------
 # Developers/Designers
-Nikhil Kulkarni. Anirudh Gubba. Saurabh Kumar.
+
 
