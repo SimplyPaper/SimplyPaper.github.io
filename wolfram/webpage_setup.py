@@ -24,6 +24,8 @@ def setUpWolfram(appid,query,value):
     css_file.write("</div>\n")
 def setUpButton(appid):
     css_file.write("<button type = \"button\" id = \"butt" + str(appid) + "\">\n Button" + str(appid) +"\n</button>\n")
+def setUpText(appid):
+    css_file.write("<div id = \"text" + str(appid) + "\">\n Text" + str(appid) + "\n</div>\n")
 def setUpFooter():
     css_file.write("<div id = \"footer\">\n Footer </div>\n")
 def styleTop():
