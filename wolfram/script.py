@@ -42,6 +42,9 @@ def paragraph_open():
 def paragraph_close():
     output_html.write("</p>\n")
 
+def place_text(text):
+    output_html.write(text + "\n")
+
 def header_open(value):
     output_html.write("<h" + value + ">\n")
 
@@ -90,7 +93,7 @@ def css_position(value):
     output_css.write("position: " + value + ";")
 
 def css_right(value):
-    output_css.write("right: " + value + ";")
+    output_css.write("left: " + value + ";")
 
 def css_top(value):
     output_css.write("top: " + value + ";")
@@ -100,6 +103,69 @@ html_header()
 html_open()
 head_open()
 html_baseSetup()
+head_close()
+body_open()
+
+
+for x in range(len(elements)):
+    temp = elements[x]
+    if (temp[x] == "text"):
+        idVal = "text" + str(x)
+        position = "absolute"
+        color = temp[1]
+        left = str(temp[2]) + "px"
+        top = str(temp[3]) + "px"
+
+        div_open("container")
+        div_open(idVal)
+
+        paragraph_open()
+        place_text("Sample text")
+        paragraph_close()
+
+        div_close()
+        div_close()
+
+        css_open(idVal)
+        css_position(position)
+        css_color(color)
+        css_left(left)
+        css_top(top)
+        css_close()
+        
+    elif (temp[x] == "image"):
+        idVal = "image" + str(x)
+        position = "absolute"
+        left = str(temp[1]) + "px"
+        top = str(temp[2]) + "px"
+        width = str(temp[3])
+        height = str(temp[4])
+
+        div_open("container")
+        div_open(idVal)
+
+        img_html(width, height)
+
+        div_close()
+        div_close()
+
+        css_open(idVal)
+        css_position(position)
+        css_left(left)
+        css_top(top)
+        css_close()
+        
+    elif (temp[x] == "button"):
+        idVal = "button" + str(x)
+        position = "absolute"
+        color = 
+        left = str(
+    else:
+        pass
+
+html_baseJSDependencies()
+body_close()
+html_close()
 
 
 
