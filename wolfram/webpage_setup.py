@@ -8,10 +8,8 @@ def basicStructureTop():
     css_file.write("<!DOCTYPE html>\n<html>\n")
 def basicStructureBottom():
     css_file.write("</html>")
-def head(value):
-    css_file.write("<head>\n")
-    css_file.write(value)
-    css_file.write("</head>\n")
+def head():
+    css_file.write("<div id = \"header\">\n Header </div>\n")
 def bodyTop():
     css_file.write("<body>\n")
 def bodyBottom():
@@ -25,9 +23,11 @@ def setUpWolfram(appid,query,value):
     css_file.write("</p>\n")
     css_file.write("</div>\n")
 def setUpButton(appid):
-    css_file.write("<button type = \"button\" id = \"butt" + str(appid) + "\">\n Button" + str(appid) +"\n</button>")
+    css_file.write("<button type = \"button\" id = \"butt" + str(appid) + "\">\n Button" + str(appid) +"\n</button>\n")
+def setUpFooter():
+    css_file.write("<div id = \"footer\">\n Footer </div>\n")
 def styleTop():
-    css_file.write("<style>")
+    css_file.write("<style>\n")
 def styleBot():
     css_file.write("</style>\n")
 def setItemSpot(appid,posx,posy,height,width):
@@ -42,10 +42,10 @@ basicStructureTop()
 styleTop()
 setItemSpot("butt1",150,100,60,100)
 styleBot()
-head("Header")
 bodyTop()
 setUpWolfram(appid,"pi","Property")
 setUpButton(1)
 bodyBottom()
+setUpFooter()
 basicStructureBottom()
 css_file.close()
