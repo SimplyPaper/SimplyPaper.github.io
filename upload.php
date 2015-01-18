@@ -52,6 +52,6 @@ if ($uploadOk == 0) {
     }
 }
 
-//exec("python run.py");
+exec("python run.py");
 exec("python script.py");
 ?>
