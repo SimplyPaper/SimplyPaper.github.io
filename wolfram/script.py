@@ -7,10 +7,11 @@ elements = []
 for line in input_data:
     temp = line.split(" ")
     elements.append(temp)
+    print temp
 
 # HTML specific functions
 def html_header():
-    output_html.wrote("<!DOCTYPE html>\n")
+    output_html.write("<!DOCTYPE html>\n")
 
 def html_open():
     output_html.write("<html>\n")
@@ -31,7 +32,7 @@ def body_close():
     output_html.write("</body>\n")
 
 def div_open(value):
-    output_html.write("<div class=" + value + ">\n")
+    output_html.write("<div class=" + "\"" + value + "\""+ ">\n")
 
 def div_close():
     output_html.write("</div>\n")
@@ -51,8 +52,8 @@ def header_open(value):
 def header_close(value):
     output_html.write("</h" + value + ">\n")
     
-def button_html():
-    output_html.write("<a href=\"#\" class=\"btn btn-primary btn-default\">Sample Button</a>\n")
+def button_html(value):
+    output_html.write("<a href=\"#\" class=\"btn btn-" + value + " btn-default\">Sample Button</a>\n")
 
 def img_html(x, y):
     output_html.write("<img src=\"http://www.placehold.it/" + x + "x" + y + "\">\n")
@@ -98,7 +99,7 @@ def css_height(value):
 def css_width(value):
     output_css.write("width: " + value + ";\n")
 
-def css_right(value):
+def css_left(value):
     output_css.write("left: " + value + ";\n")
 
 def css_top(value):
@@ -112,10 +113,11 @@ html_baseSetup()
 head_close()
 body_open()
 
-
+print "starting loop"
 for x in range(len(elements)):
+    print "iteration" + str(x)
     temp = elements[x]
-    if (temp[x] == "text"):
+    if (temp[0] == "text"):
         idVal = "text" + str(x)
         position = "absolute"
         color = temp[1]
@@ -143,13 +145,13 @@ for x in range(len(elements)):
         css_top(top)
         css_close()
         
-    elif (temp[x] == "image"):
+    elif (temp[0] == "image"):
         idVal = "image" + str(x)
         position = "absolute"
         left = str(temp[1]) + "px"
         top = str(temp[2]) + "px"
-        width = str(temp[3])
-        height = str(temp[4])
+        height = str(temp[3])
+        width = str(temp[4])
 
         div_open("container")
         div_open(idVal)
@@ -167,11 +169,37 @@ for x in range(len(elements)):
         css_top(top)
         css_close()
         
-    elif (temp[x] == "button"):
+    elif (temp[0] == "button"):
         idVal = "button" + str(x)
+        idVal2 = "btncolor" + str(x)
         position = "absolute"
-        color = 
-        left = str(
+        backgroundColor = temp[1]
+        color = temp[2]
+        left = str(temp[3]) + "px"
+        top = str(temp[4]) + "px"
+        height = str(temp[5]) + "px"
+        length = str(temp[6]) + "px"
+
+        div_open("container")
+        div_open(idVal)
+
+        button_html(idVal2)
+
+        div_close()
+        div_close()
+
+        css_open(idVal)
+        css_position(position)
+        css_height(height)
+        css_width(width)
+        css_left(left)
+        css_top(top)
+        css_close()
+
+        css_open(idVal2)
+        css_backgroundColor(backgroundColor)
+        css_color(color)
+        css_close()
     else:
         pass
 
@@ -180,4 +208,5 @@ body_close()
 html_close()
 
 
-
+output_html.close()
+output_css.close()

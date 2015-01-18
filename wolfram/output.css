@@ -1,0 +1,62 @@
+.text0 {
+position: absolute;
+height: 210px;
+width: 100px;
+color: 3;
+left: #181FF0px;
+top: 210px;
+}
+.button1 {
+position: absolute;
+height: 100px;
+width: 100px;
+left: 600px;
+top: 525px;
+}
+.btncolor1 {
+background-color: #000000;
+color: #FFFFFF;
+}
+.image2 {
+position: absolute;
+height: 100;
+width: 100
+;
+left: 100px;
+top: 200px;
+}
+.image3 {
+position: absolute;
+height: 100;
+width: 100
+;
+left: 100px;
+top: 320px;
+}
+.text4 {
+position: absolute;
+height: 390px;
+width: 100px;
+color: 3;
+left: #000000px;
+top: 310px;
+}
+.text5 {
+position: absolute;
+height: 70px;
+width: 100px;
+color: 1;
+left: #056E25px;
+top: 525px;
+}
+.button6 {
+position: absolute;
+height: 100px;
+width: 100px;
+left: 700px;
+top: 625px;
+}
+.btncolor6 {
+background-color: #181FF0;
+color: #ffffff;
+}
