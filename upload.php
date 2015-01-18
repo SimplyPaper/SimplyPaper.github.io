@@ -2,7 +2,7 @@
 header('Location: http://localhost:8888/output.html');
 $file = 'log.txt';
 $current = file_get_contents($file);
-$target_dir = "uploads/";
+$target_dir = "";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -52,5 +52,6 @@ if ($uploadOk == 0) {
     }
 }
 
-exec("python test_script.py");
+//exec("python run.py");
+exec("python script.py");
 ?>
