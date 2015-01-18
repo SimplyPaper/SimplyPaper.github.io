@@ -1,14 +1,14 @@
-#from PIL import Image
+from PIL import Image
 #import itertools
 import numpy as np
 import cv2
 
 
 def colorInsideR (imageName, coordinateLeft, coordinateRight, coordinateTop, coordinateB):
-    #im = Image.open(imageName)
-    #pix = im.load()
+    im = Image.open(imageName)
+    img = im.load()
     
-    img = cv2.imread(imageName)
+    #img = cv2.imread(imageName)
     
     RArr = []
     GArr = []

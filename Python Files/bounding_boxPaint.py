@@ -2,8 +2,8 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 import heapq
-from colorRect import colorInsideR
-from colorRect import getRGB
+from colorRectPaint import getRGB
+
 
 def rectangle_maker(image_name, number_of_rectangles):
     img = cv2.imread(image_name)
@@ -56,7 +56,7 @@ def rectangle_maker(image_name, number_of_rectangles):
                 isRectangle[index1] = 0
             if len(potential_rectangle_contours[index2]) < 3:
                 isRectangle[index2] = 0
-            if (abs(potential_x_coor[index1] - potential_x_coor[index2]) < 5):
+            if (abs(potential_x_coor[index1] - potential_x_coor[index2]) < 4):
                 isRectangle[index2] = 0
     
     num_rectangles_drawn = 0
@@ -69,11 +69,11 @@ def rectangle_maker(image_name, number_of_rectangles):
             #RGB = getRGB(img, x, x+w, y, y+h)
             #print RGB
             num_rectangles_drawn = num_rectangles_drawn+1
-            print current_contour
+            #print current_contour
         index = index+1
 
     
-    '''
+    
     desiredIndex = 0
     for index in range(len(areas)):
         if res[3] == areas[index]:
@@ -83,7 +83,7 @@ def rectangle_maker(image_name, number_of_rectangles):
     
     x,y,w,h = cv2.boundingRect(cnt1)
     cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
-    '''
+    
     
     cv2.imshow("Show",img)
     cv2.imwrite('new.jpg', img)

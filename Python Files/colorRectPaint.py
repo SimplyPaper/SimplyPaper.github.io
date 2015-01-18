@@ -1,12 +1,13 @@
-#from PIL import Image
+from PIL import Image
 #import itertools
-import numpy as np
-import cv2
+#import numpy as np
+#import cv2
 
 
 def colorInsideR (imageName, coordinateLeft, coordinateRight, coordinateTop, coordinateB):
     im = Image.open(imageName)
     img = im.load()
+    #img = cv2.imread(imageName)
     
     
     RArr = []
@@ -33,15 +34,6 @@ def colorInsideR (imageName, coordinateLeft, coordinateRight, coordinateTop, coo
     for i in range(len(BArr)):
         if BArr[i] < 245:
             Bfinal.append(BArr[i])
-    
-    '''
-    for i,j,k in itertools.izip(RArr[:], GArr[:], BArr[:]):
-        if (i > 230 | j > 230 | k > 230):
-            print i
-            RArr.remove(i)
-            GArr.remove(j)
-            BArr.remove(k)
-    '''
     
    
     Red = reduce(lambda x, y: x + y,Rfinal) / len(Rfinal)

@@ -1,3 +1,3 @@
-from bounding_box import rectangle_maker
+from bounding_boxPaint import rectangle_maker
 
-rectangle_maker('2rect.jpg', 2)
+rectangle_maker('paint_sample.jpg', 9)
