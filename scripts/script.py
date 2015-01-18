@@ -59,7 +59,7 @@ def img_html(x, y):
     output_html.write("<img src=\"http://www.placehold.it/" + x + "x" + y + "\">\n")
 
 def html_includeCSS():
-    output_html.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"output_css.\">")
+    output_html.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"output.css\">\n")
 
 def html_baseSetup():
     output_html.write("<meta charset=\"utf-8\">\n")
@@ -69,11 +69,11 @@ def html_baseSetup():
     output_html.write("<meta name=\"author\" content=\"\">\n")
 
 def html_baseCSSDependencies():
-    output_html.write("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">\n")
+    output_html.write("<link href=\"bootstrap.min.css\" rel=\"stylesheet\">\n")
 
 def html_baseJSDependencies():
-    output_html.write("<script src=\"js/jquery.js\"></script>\n")
-    output_html.write("<script src=\"js/bootstrap.min.js\"></script>\n")
+    output_html.write("<script src=\"jquery.js\"></script>\n")
+    output_html.write("<script src=\"bootstrap.min.js\"></script>\n")
     
 
 # CSS specific functions
@@ -94,22 +94,24 @@ def css_position(value):
     output_css.write("position: " + value + ";\n")
 
 def css_height(value):
-    output_css.write("height: " + value + ";\n")
+    output_css.write("height: " + value + "px;\n")
 
 def css_width(value):
-    output_css.write("width: " + value + ";\n")
+    output_css.write("width: " + value + "px;\n")
 
 def css_left(value):
-    output_css.write("left: " + value + ";\n")
+    output_css.write("left: " + value + "px;\n")
 
 def css_top(value):
-    output_css.write("top: " + value + ";\n")
+    output_css.write("top: " + value + "px;\n")
 
 
 html_header()
 html_open()
 head_open()
 html_baseSetup()
+html_includeCSS()
+html_baseCSSDependencies()
 head_close()
 body_open()
 
@@ -120,17 +122,20 @@ for x in range(len(elements)):
     if (temp[0] == "text"):
         idVal = "text" + str(x)
         position = "absolute"
-        color = temp[1]
-        left = str(temp[2]) + "px"
-        top = str(temp[3]) + "px"
-        height = str(temp[4]) + "px"
-        width = str(temp[5]) + "px"
+        size = str(temp[1])
+        color = temp[2]
+        left = str(temp[3])
+        top = str(temp[4])
+        height = str(temp[5])
+        width = str(temp[6])
 
         div_open("container")
         div_open(idVal)
 
         paragraph_open()
+        header_open(size)
         place_text("Sample text")
+        header_close(size)
         paragraph_close()
 
         div_close()
@@ -148,8 +153,8 @@ for x in range(len(elements)):
     elif (temp[0] == "image"):
         idVal = "image" + str(x)
         position = "absolute"
-        left = str(temp[1]) + "px"
-        top = str(temp[2]) + "px"
+        left = str(temp[1])
+        top = str(temp[2])
         height = str(temp[3])
         width = str(temp[4])
 
@@ -175,10 +180,10 @@ for x in range(len(elements)):
         position = "absolute"
         backgroundColor = temp[1]
         color = temp[2]
-        left = str(temp[3]) + "px"
-        top = str(temp[4]) + "px"
-        height = str(temp[5]) + "px"
-        length = str(temp[6]) + "px"
+        left = str(temp[3])
+        top = str(temp[4])
+        height = str(temp[5])
+        length = str(temp[6])
 
         div_open("container")
         div_open(idVal)
