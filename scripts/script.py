@@ -59,7 +59,7 @@ def img_html(x, y):
     output_html.write("<img src=\"http://www.placehold.it/" + x + "x" + y + "\">\n")
 
 def html_includeCSS():
-    output_html.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"output_css.css\">")
+    output_html.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"output.css\">\n")
 
 def html_baseSetup():
     output_html.write("<meta charset=\"utf-8\">\n")
