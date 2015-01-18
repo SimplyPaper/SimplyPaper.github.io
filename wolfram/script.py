@@ -52,7 +52,7 @@ def header_close(value):
     output_html.write("</h" + value + ">\n")
     
 def button_html():
-    output_html.write("<a href=\"#\" class=\"btn btn-primary btn-default\">Button</a>\n")
+    output_html.write("<a href=\"#\" class=\"btn btn-primary btn-default\">Sample Button</a>\n")
 
 def img_html(x, y):
     output_html.write("<img src=\"http://www.placehold.it/" + x + "x" + y + "\">\n")
@@ -78,25 +78,31 @@ def html_baseJSDependencies():
 # CSS specific functions
 
 def css_open(tag):
-    output_css.write("." + tag + " {")
+    output_css.write("." + tag + " {\n")
 
 def css_close():
-    output_css.write("}")
+    output_css.write("}\n")
 
 def css_color(value):
-    output_css.write("color: " + value + ";")
+    output_css.write("color: " + value + ";\n")
 
 def css_backgroundColor(value):
-    output_css.write("background-color: " + value + ";")
+    output_css.write("background-color: " + value + ";\n")
 
 def css_position(value):
-    output_css.write("position: " + value + ";")
+    output_css.write("position: " + value + ";\n")
+
+def css_height(value):
+    output_css.write("height: " + value + ";\n")
+
+def css_width(value):
+    output_css.write("width: " + value + ";\n")
 
 def css_right(value):
-    output_css.write("left: " + value + ";")
+    output_css.write("left: " + value + ";\n")
 
 def css_top(value):
-    output_css.write("top: " + value + ";")
+    output_css.write("top: " + value + ";\n")
 
 
 html_header()
@@ -115,6 +121,8 @@ for x in range(len(elements)):
         color = temp[1]
         left = str(temp[2]) + "px"
         top = str(temp[3]) + "px"
+        height = str(temp[4]) + "px"
+        width = str(temp[5]) + "px"
 
         div_open("container")
         div_open(idVal)
@@ -128,6 +136,8 @@ for x in range(len(elements)):
 
         css_open(idVal)
         css_position(position)
+        css_height(height)
+        css_width(width)
         css_color(color)
         css_left(left)
         css_top(top)
@@ -151,6 +161,8 @@ for x in range(len(elements)):
 
         css_open(idVal)
         css_position(position)
+        css_height(height)
+        css_width(width)
         css_left(left)
         css_top(top)
         css_close()
